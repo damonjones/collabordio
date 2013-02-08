@@ -58,3 +58,13 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+mdj_layout:
+    project:
+        title: CollaboRdio
+        author: Matt & Damon
+        description: ~
+        company: Hackathon
+    google:
+        analytics:
+            tracking_code: ~
