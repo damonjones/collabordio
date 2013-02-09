@@ -144,4 +144,9 @@ class Party
             'album' => $album
         );
     }
+
+    public function popTrack()
+    {
+        $this->tracks = array_pop($this->tracks);
+    }
 }

@@ -132,4 +132,30 @@ class DefaultController extends Controller
 
         return $this->redirect($this->generateUrl('party_show'));
     }
+
+    /**
+     * @Route("/pop", name="pop")
+     */
+    public function popAction(Request $request)
+    {
+        $code = $request->getSession()->get('code');
+
+        if (!$code) {
+            return $this->redirect($this->generateUrl('party_join'));
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $party = $em->getRepository('HTAppBundle:Party')->findOneByCode($code);
+
+        if (!$party) {
+            throw $this->createNotFoundException('Unable to find your party.');
+        }
+
+        $party->popTrack();
+
+        $em->flush();
+
+        return new Response();
+    }
 }
