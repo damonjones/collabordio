@@ -51,7 +51,7 @@ class Party
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -67,14 +67,14 @@ class Party
     public function setCode($code)
     {
         $this->code = $code;
-    
+
         return $this;
     }
 
     /**
      * Get code
      *
-     * @return string 
+     * @return string
      */
     public function getCode()
     {
@@ -90,14 +90,14 @@ class Party
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -113,14 +113,14 @@ class Party
     public function setTracks($tracks)
     {
         $this->tracks = $tracks;
-    
+
         return $this;
     }
 
     /**
      * Get tracks
      *
-     * @return array 
+     * @return array
      */
     public function getTracks()
     {
@@ -147,6 +147,6 @@ class Party
 
     public function popTrack()
     {
-        $this->tracks = array_pop($this->tracks);
+        array_pop($this->tracks);
     }
 }
