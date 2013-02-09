@@ -331,7 +331,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 40rem; }
 
 .album-art {
-  width: 100%; }
+  width: 100%;
+  min-height: 400px; }
 
 .play-pause-control {
   width: 100px;
