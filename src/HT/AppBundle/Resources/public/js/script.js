@@ -7,7 +7,7 @@ $(function() {
         $('#player').animate({
                 opacity: 1
             }, 2000);
-        $(this).rdio().play('t1230882');
+        //$(this).rdio().play('t1230882');
     });
 
     $('#rdio').bind('playingTrackChanged.rdio', function(e, playingTrack, sourcePosition) {

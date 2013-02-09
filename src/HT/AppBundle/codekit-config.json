@@ -2,15 +2,6 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8248",
   "files" : {
-    "\/Resources\/views\/Layouts\/base.html.twig" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/Resources\/views\/Layouts\/base.html.twig",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/Resources\/sass\/sections\/_player.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -22,6 +13,15 @@
       "outputAbbreviatedPath" : "\/Resources\/sass\/public\/css\/_player.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/Resources\/views\/Layouts\/base.html.twig" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/Resources\/views\/Layouts\/base.html.twig",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/Resources\/sass\/style.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -47,6 +47,24 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/Resources\/views\/Partials\/header.html.twig" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/Resources\/views\/Partials\/header.html.twig",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/Resources\/views\/Default\/index.html.twig" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/Resources\/views\/Default\/index.html.twig",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/Resources\/sass\/sections\/_primary-footer.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -58,47 +76,6 @@
       "outputAbbreviatedPath" : "\/Resources\/sass\/public\/css\/_primary-footer.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/Resources\/views\/Default\/index.html.twig" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/Resources\/views\/Default\/index.html.twig",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/Resources\/views\/Partials\/header.html.twig" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/Resources\/views\/Partials\/header.html.twig",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/Resources\/sass\/_base.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/Resources\/sass\/_base.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/Resources\/public\/css\/_base.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/Resources\/public\/js\/script.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/Resources\/public\/js\/script.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/Resources\/public\/js\/script-ck.js",
-      "fileType" : 64
     },
     "\/HTAppBundle.php" : {
       "ignoreWasSetByUser" : 0,
@@ -118,6 +95,30 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/Resources\/sass\/utility\/lists\/_horizontal-menu.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/Resources\/sass\/utility\/lists\/_horizontal-menu.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/Resources\/sass\/utility\/public\/css\/_horizontal-menu.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/Resources\/sass\/_base.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/Resources\/sass\/_base.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/Resources\/public\/css\/_base.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/Resources\/views\/Test\/test.html.twig" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -126,18 +127,6 @@
       "inputAbbreviatedPath" : "\/Resources\/views\/Test\/test.html.twig",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/Resources\/sass\/utility\/reset\/_normalize.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/Resources\/sass\/utility\/reset\/_normalize.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/Resources\/sass\/utility\/public\/css\/_normalize.css",
-      "fileType" : 4,
-      "debugStyle" : 0
     },
     "\/Resources\/sass\/partials\/_google-fonts.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -151,17 +140,28 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/Resources\/sass\/utility\/lists\/_horizontal-menu.scss" : {
+    "\/Resources\/sass\/utility\/reset\/_normalize.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/Resources\/sass\/utility\/lists\/_horizontal-menu.scss",
+      "inputAbbreviatedPath" : "\/Resources\/sass\/utility\/reset\/_normalize.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/Resources\/sass\/utility\/public\/css\/_horizontal-menu.css",
+      "outputAbbreviatedPath" : "\/Resources\/sass\/utility\/public\/css\/_normalize.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/Resources\/public\/js\/script.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/Resources\/public\/js\/script.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/Resources\/public\/js\/script-ck.js",
+      "fileType" : 64
     },
     "\/Resources\/sass\/utility\/sizing\/_rem-sizing.scss" : {
       "ignoreWasSetByUser" : 0,
