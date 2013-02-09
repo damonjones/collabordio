@@ -1,0 +1,32 @@
+{% extends "HTAppBundle:Layouts:base.html.twig" %}
+
+{% block title %}Player Test{% endblock title %}
+
+{% block content %}
+    <div class="content-wrapper">
+        <section id="player" class="player">
+            <div id="rdio"></div>
+
+            <img id="album-art" class="album-art" src="" />
+            <dl class="currently-playing">
+                <dt>Album</dt>
+                <dd id="playing-album"></dd>
+
+                <dt>Artist</dt>
+                <dd id="playing-artist"></dd>
+
+                <dt>Track</dt>
+                <dd id="playing-track"></dd>
+            </dl>
+
+            <div>
+                <strong class="position-label">Position:</strong>
+                <span class="progress-container">
+                    <span class="playing-position" id="playing-position" style="display:inline-block;background-color:#666">&nbsp;</span>
+                </span>
+            </div>
+
+            <button id="play-pause-control" class="play-pause-control">Play</button>
+        </section>
+    </div>
+{% endblock content %}

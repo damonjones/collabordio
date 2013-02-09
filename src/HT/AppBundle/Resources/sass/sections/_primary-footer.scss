@@ -1,0 +1,22 @@
+.primary-footer
+{
+    @include rem-sizing(1.6, 'padding');
+    background-color: #223039;
+    color: #fff;
+
+    p
+    {
+        @include rem-sizing(100.0, 'width');
+        margin: 0 auto;
+    }
+
+    a
+    {
+        color: #fff;
+
+        &:hover
+        {
+            color: #ccc;
+        }
+    }
+}
