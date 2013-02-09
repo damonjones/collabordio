@@ -1,0 +1,81 @@
+.player
+{
+    opacity: 0;
+    @include rem-sizing(2, 'margin-bottom');
+    position: relative;
+    @include rem-sizing(40.0, 'width');
+}
+
+.album-art
+{
+    width: 100%;
+}
+
+.play-pause-control
+{
+    @include rem-sizing(10.0, 'width');
+    @include rem-sizing(10.0, 'height');
+
+    border: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 175px;
+    left: 50%;
+
+    @include rem-sizing(-5.0, 'margin-left');
+}
+
+dl
+{
+    dt, dd
+    {
+        @include rem-sizing(1, 'margin-bottom');
+        float: left;
+    }
+
+    dt
+    {
+        font-weight: bold;
+        @include rem-sizing(10, 'width');
+        clear: left;
+
+        &:after
+        {
+            content: ":";
+        }
+    }
+
+    dd
+    {
+        margin-left: 0;
+    }
+
+    &:before, &:after
+    {
+        content: " ";
+        display: table;
+    }
+
+    &:after
+    {
+        clear: both;
+    }
+}
+
+.position-label
+{
+    display: inline-block;
+    @include rem-sizing(9.7, 'width');
+}
+
+.progress-container
+{
+    @include rem-sizing(29.7, 'width');
+    display: inline-block;
+    border: 1px solid black;
+}

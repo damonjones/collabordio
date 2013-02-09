@@ -1,0 +1,40 @@
+@import 'utility/reset/normalize';
+@import 'utility/sizing/rem-sizing';
+@import 'utility/lists/horizontal-menu';
+
+@include normalize-reset;
+
+
+@import 'partials/google-fonts';
+
+*
+{
+    box-sizing: border-box;
+}
+
+html
+{
+    font-size: 62.5%;
+}
+
+body
+{
+    font-family: Verdana, Geneva, sans-serif;
+    @include rem-sizing(1.2);
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-weight: normal;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.content-wrapper
+{
+    @include rem-sizing(100.0, 'width');
+    margin: 0 auto;
+}
+
+@import 'sections/primary-header';
+@import 'sections/primary-footer';
+@import 'sections/player';
