@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use HT\AppBundle\Service\Exception\NotAuthorisedException;
+use HT\AppBundle\Form\SearchType;
 
 class DefaultController extends Controller
 {
@@ -71,18 +72,37 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/test", name="test")
+     * @Route("/search", name="search")
+     * @Template
      */
-    public function testAction()
+    public function searchAction(Request $request)
     {
-//        $response = $this->sendRequest('search', array('query' => 'Steely Dan', 'types' => 'Artist'));
-        $response = $this->sendRequest('currentUser', array());
+        $form = $this->createForm(new SearchType());
+        $form->bind($request);
+        $query = $form->get('search')->getData();
+
+        $response = $this->sendRequest('search', array('query' => $query, 'types' => 'Track'));
 
         if (is_array($response)) {
-            $response = new Response(print_r($response, true));
-            $response->headers->set('Content-Type', 'text/plain');
+            $tracks = array();  
+            foreach ($response['result']['results'] as $result) {
+                $tracks[$result['key']] = $result['name'];
+            }
+            return array('tracks' => $tracks);
         }
 
         return $response;
+    }
+
+    /**
+     * @Route("/add/{id}", name="add")
+     * @Template
+     */
+    public function addAction($id)
+    {
+        $this->
+        var_dump($id);
+
+        return $this->createResponse('');
     }
 }
