@@ -4,17 +4,31 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
     <parameters>
-        <parameter key="ht_app.example.class">HT\AppBundle\Example</parameter>
+        <parameter key="ht_app.rdio.class">HT\AppBundle\Service\Rdio</parameter>
+        <parameter key="ht_app.rdio.base_url">http://api.rdio.com/</parameter>
+        <parameter key="ht_app.rdio.endpoint">/1/</parameter>
+        <parameter key="ht_app.rdio.request_token_url">/oauth/request_token</parameter>
+        <parameter key="ht_app.rdio.access_token_url">/oauth/access_token</parameter>
+        <parameter key="ht_app.rdio.consumer_key">%rdio_consumer_key%</parameter>
+        <parameter key="ht_app.rdio.consumer_secret">%rdio_consumer_secret%</parameter>
+
+        <parameter key="ht_app.rdio.client.class">HT\AppBundle\Service\GuzzleOAuthClient</parameter>
     </parameters>
 
     <services>
-        <service id="ht_app.example" class="%ht_app.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="ht_app.rdio.client" class="%ht_app.rdio.client.class%">
+            <argument>%ht_app.rdio.consumer_key%</argument>
+            <argument>%ht_app.rdio.consumer_secret%</argument>
+            <argument>%ht_app.rdio.base_url%</argument>
+        </service>
+
+        <service id="ht_app.rdio" class="%ht_app.rdio.class%">
+            <argument type="service" id="ht_app.rdio.client" />
+            <argument>%ht_app.rdio.endpoint%</argument>
+            <argument>%ht_app.rdio.request_token_url%</argument>
+            <argument>%ht_app.rdio.access_token_url%</argument>
         </service>
     </services>
-    -->
+
 </container>
