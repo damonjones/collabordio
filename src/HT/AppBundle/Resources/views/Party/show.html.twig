@@ -1,0 +1,15 @@
+{%  extends '::base.html.twig' %}
+
+{% block body %}
+<h1>Welcome to {{ party.name }}</h1>
+
+{{ party.tracks }}
+
+<form action="{{ path('search') }}" method="post" {{ form_enctype(searchForm) }}>
+    {{ form_widget(searchForm) }}
+    <p>
+        <button type="submit">Search</button>
+    </p>
+</form>
+
+{% endblock %}

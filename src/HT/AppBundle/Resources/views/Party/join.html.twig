@@ -1,0 +1,14 @@
+{%  extends '::base.html.twig' %}
+
+{% block body %}
+
+<h1>Join a Party</h1>
+
+<form action="{{ path('party_join') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Join</button>
+    </p>
+</form>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{%  extends '::base.html.twig' %}
+
+{%  block body %}
+{% if tracks %}
+<ul>
+{% for id, track in tracks %}
+    <li><a href="{{ path('add', { 'id': id }) }}">{{ id }}: {{ track }}</li>
+{% endfor %}
+</ul>
+{% else %}
+    No matching tracks found. Please try again.
+{%  endif %}
+{%  endblock %}
