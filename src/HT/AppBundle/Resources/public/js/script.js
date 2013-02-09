@@ -7,8 +7,23 @@ $(function() {
         $('#player').animate({
                 opacity: 1
             }, 2000);
-        //$(this).rdio().play('t1230882');
+
+        playNextTrack();
+
     });
+
+    function playNextTrack()
+    {
+        var theTrack = $('#track-queue li').first();
+
+        var theKey = theTrack.attr('data-track-key');
+
+        $('#rdio').rdio().play(theKey);
+
+        $.get('/app_dev.php/pop');
+
+        theTrack.fadeOut();
+    }
 
     $('#rdio').bind('playingTrackChanged.rdio', function(e, playingTrack, sourcePosition) {
         if (playingTrack) {
@@ -40,6 +55,10 @@ $(function() {
                 control.html('Pause');
                 control.attr('data-action', 'pause');
                 break;
+
+            case 2:
+                playNextTrack();
+                break;
         }
     });
 
@@ -62,5 +81,11 @@ $(function() {
 
         return false;
     });
+
+    setInterval(function() {
+        $.get('/app_dev.php/party/tracks', function(data) {
+            $('#track-queue').html(data);
+        });
+    }, 1000);
 
 });

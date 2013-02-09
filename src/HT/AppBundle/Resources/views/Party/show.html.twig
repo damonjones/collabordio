@@ -31,10 +31,12 @@
         </section>
 
         <section class="queue-display">
+            {% if not app.session.get('owner') %}
             <form action="{{ path('search') }}" method="post" {{ form_enctype(searchForm) }}>
                 {{ form_widget(searchForm) }}
                 <!-- <button type="submit">Search</button> -->
             </form>
+            {% endif %}
 
             {% if party.tracks %}
                 <ul id="track-queue" class="track-listing">

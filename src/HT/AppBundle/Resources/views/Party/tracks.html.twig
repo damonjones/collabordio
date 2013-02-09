@@ -1,3 +1,10 @@
-{% for track in tracks %}
-    {{ track.name }}<br/>
-{% endfor %}
+{% if tracks %}
+<ul id="track-queue" class="track-listing">
+    {% for track in tracks %}
+    <li data-track-key="{{ track.key }}">
+        <h2>{{ track.name }}</h2>
+        <p>{{ track.artist }} <em>{{ track.album }}</em></p>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
