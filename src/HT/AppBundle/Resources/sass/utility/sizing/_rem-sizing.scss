@@ -1,0 +1,19 @@
+// ==========================================================================
+// Sizing Mixins
+// ==========================================================================
+// Mixins for all kinds of sizing needs
+// --------------------------------------------------------------------------
+// Author:     Matthew Davis
+// Created:    22/01/2013
+// Modified:   22/01/2013
+// --------------------------------------------------------------------------
+// Copyright (c) 2013 Matthew Davis. All rights reserved.
+// --------------------------------------------------------------------------
+
+/* Given a decimal value (em), calculate the rem and px fallback
+/* -------------------------------------------------------------------------- */
+@mixin rem-sizing($decimal-size, $property: 'font-size')
+{
+    #{$property}: $decimal-size * 10px;
+    #{$property}: $decimal-size + rem;
+}

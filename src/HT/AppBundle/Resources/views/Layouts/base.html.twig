@@ -1,0 +1,22 @@
+{% extends "MDJLayoutBundle::base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/htapp/css/style.css') }}" />
+{% endblock stylesheets %}
+
+{% block javascript %}
+    <script src="{{ asset('bundles/htapp/js/rdio.js') }}"></script>
+    <script src="{{ asset('bundles/htapp/js/script.js') }}"></script>
+{% endblock javascript %}
+
+{% block body %}
+    {% block header %}
+        {% include "HTAppBundle:Partials:header.html.twig" %}
+    {% endblock header %}
+
+    {% block content %}{% endblock content %}
+
+    {% block footer %}
+        {% include "HTAppBundle:Partials:footer.html.twig" %}
+    {% endblock footer %}
+{% endblock body %}
