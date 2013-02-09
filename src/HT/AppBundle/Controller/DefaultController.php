@@ -78,31 +78,58 @@ class DefaultController extends Controller
     public function searchAction(Request $request)
     {
         $form = $this->createForm(new SearchType());
-        $form->bind($request);
-        $query = $form->get('search')->getData();
 
-        $response = $this->sendRequest('search', array('query' => $query, 'types' => 'Track'));
+        $tracks = array();
 
-        if (is_array($response)) {
-            $tracks = array();  
-            foreach ($response['result']['results'] as $result) {
-                $tracks[$result['key']] = $result['name'];
+        if ('POST' == $request->getMethod()) {
+            $form->bind($request);
+            $query = $form->get('search')->getData();
+
+            $response = $this->sendRequest('search', array('query' => $query, 'types' => 'Track'));
+
+            if (is_array($response)) {
+                foreach ($response['result']['results'] as $result) {
+                    $tracks[] = array(
+                        'key' => $result['key'],
+                        'name' => $result['name'],
+                        'artist' => $result['artist'],
+                        'album' => $result['album']
+                    );
+                }
+
+                return array('tracks' => $tracks);
             }
-            return array('tracks' => $tracks);
-        }
 
-        return $response;
+            return $response;
+        } else {
+            $this->redirect($this->generateUrl('party_show'));
+        }
     }
 
     /**
-     * @Route("/add/{id}", name="add")
+     * @Route("/add/{key}/{name}/{artist}/{album}", name="add")
      * @Template
      */
-    public function addAction($id)
+    public function addAction(Request $request, $key, $name, $artist, $album)
     {
-        $this->
-        var_dump($id);
+        $code = $request->getSession()->get('code');
 
-        return $this->createResponse('');
+        if (!$code) {
+            return $this->redirect($this->generateUrl('party_join'));
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $party = $em->getRepository('HTAppBundle:Party')->findOneByCode($code);
+
+        if (!$party) {
+            throw $this->createNotFoundException('Unable to find your party.');
+        }
+
+        $party->addTrack($key, urldecode($name), urldecode($artist), urldecode($album));
+
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('party_show'));
     }
 }

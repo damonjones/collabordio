@@ -3,7 +3,9 @@
 {% block body %}
 <h1>Welcome to {{ party.name }}</h1>
 
-{{ party.tracks }}
+{% for track in party.tracks %}
+    {{ track.name }}<br/>
+{% endfor %}
 
 <form action="{{ path('search') }}" method="post" {{ form_enctype(searchForm) }}>
     {{ form_widget(searchForm) }}

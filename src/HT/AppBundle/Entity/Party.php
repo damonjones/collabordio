@@ -125,4 +125,14 @@ class Party
     {
         return $this->tracks;
     }
+
+    public function addTrack($key, $name, $artist, $album)
+    {
+        $this->tracks[] = array(
+            'key' => $key,
+            'name' => $name,
+            'artist' => $artist,
+            'album' => $album
+        );
+    }
 }

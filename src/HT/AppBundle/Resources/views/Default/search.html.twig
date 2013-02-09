@@ -3,8 +3,10 @@
 {%  block body %}
 {% if tracks %}
 <ul>
-{% for id, track in tracks %}
-    <li><a href="{{ path('add', { 'id': id }) }}">{{ id }}: {{ track }}</li>
+{% for track in tracks %}
+    <li><a href="{{ path('add', { 'key': track.key, 'name': track.name|url_encode(), 'artist': track.artist|url_encode(), 'album': track.album|url_encode()}) }}">
+        {{ track.key }}: {{ track.name }} ({{ track.artist }} : {{ track.album }})</a>
+    </li>
 {% endfor %}
 </ul>
 {% else %}
