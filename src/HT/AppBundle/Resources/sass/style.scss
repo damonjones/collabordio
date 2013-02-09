@@ -38,3 +38,23 @@ h1, h2, h3, h4, h5, h6
 @import 'sections/primary-header';
 @import 'sections/primary-footer';
 @import 'sections/player';
+@import 'sections/queue-display';
+
+
+.track-listing
+{
+    padding-left: 0;
+    list-style-type: none;
+
+    li
+    {
+        border: 1px solid #ccc;
+        padding: 0px 10px;
+
+        em
+        {
+            color: #ccc;
+            padding-left: 4px;
+        }
+    }
+}
