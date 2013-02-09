@@ -45,6 +45,7 @@ class Party
     public function __construct()
     {
         $this->code = uniqid();
+        $this->tracks = array();
     }
 
     /**
@@ -123,11 +124,19 @@ class Party
      */
     public function getTracks()
     {
-        return $this->tracks;
+        return $this->tracks ?: array();
     }
 
     public function addTrack($key, $name, $artist, $album)
     {
+        if (is_array($this->tracks)) {
+            foreach ($this->tracks as $track) {
+                if ($key == $track['key']) {
+                    return;
+                }
+            }
+        }
+
         $this->tracks[] = array(
             'key' => $key,
             'name' => $name,

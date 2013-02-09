@@ -57,6 +57,7 @@ class PartyController extends Controller
             $em->flush();
 
             $request->getSession()->set('code', $party->getCode());
+            $request->getSession()->set('owner', true);
 
             return $this->redirect($this->generateUrl('party_show'));
         }
@@ -89,6 +90,7 @@ class PartyController extends Controller
             }
 
             $request->getSession()->set('code', $code);
+            $request->getSession()->set('owner', false);
 
             return $this->redirect($this->generateUrl('party_show'));
         }
@@ -124,5 +126,23 @@ class PartyController extends Controller
             'party' => $party,
             'searchForm' => $searchForm->createView()
         );
+    }
+
+    /**
+     * @Route("/tracks")
+     * @Template
+     */
+    public function tracksAction(Request $request)
+    {
+        $tracks = array();
+
+        if ($code = $request->getSession()->get('code')) {
+            $em = $this->getDoctrine()->getManager();
+            if ($party = $em->getRepository('HTAppBundle:Party')->findOneByCode($code)) {
+                $tracks = $party->getTracks();
+            }
+        }
+
+        return array('tracks' => $tracks);
     }
 }
