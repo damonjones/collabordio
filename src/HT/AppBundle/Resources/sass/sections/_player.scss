@@ -1,5 +1,7 @@
 .player
 {
+    display: inline-block;
+    vertical-align: top;
     opacity: 0;
     @include rem-sizing(2, 'margin-bottom');
     position: relative;

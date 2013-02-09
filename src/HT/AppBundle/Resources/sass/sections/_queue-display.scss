@@ -1,0 +1,7 @@
+.queue-display
+{
+    @include rem-sizing(40, 'width');
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 100px;
+}

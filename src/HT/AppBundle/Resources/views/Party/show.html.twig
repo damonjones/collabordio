@@ -1,17 +1,53 @@
-{%  extends '::base.html.twig' %}
+{%  extends 'HTAppBundle:Layouts:base.html.twig' %}
 
-{% block body %}
-<h1>Welcome to {{ party.name }}</h1>
+{% block title %}Get Your Groove On{% endblock title %}
 
-{% for track in party.tracks %}
-    {{ track.name }}<br/>
-{% endfor %}
+{% block content %}
+    <div class="content-wrapper">
+        <h1>Welcome to {{ party.name }}</h1>
+        <section id="player" class="player">
+            <div id="rdio"></div>
 
-<form action="{{ path('search') }}" method="post" {{ form_enctype(searchForm) }}>
-    {{ form_widget(searchForm) }}
-    <p>
-        <button type="submit">Search</button>
-    </p>
-</form>
+            <img id="album-art" class="album-art" src="" />
+            <dl class="currently-playing">
+                <dt>Album</dt>
+                <dd id="playing-album"></dd>
 
-{% endblock %}
+                <dt>Artist</dt>
+                <dd id="playing-artist"></dd>
+
+                <dt>Track</dt>
+                <dd id="playing-track"></dd>
+            </dl>
+
+            <div>
+                <strong class="position-label">Position:</strong>
+                <span class="progress-container">
+                    <span class="playing-position" id="playing-position" style="display:inline-block;background-color:#666">&nbsp;</span>
+                </span>
+            </div>
+
+            <button id="play-pause-control" class="play-pause-control">Play</button>
+        </section>
+
+        <section class="queue-display">
+            <form action="{{ path('search') }}" method="post" {{ form_enctype(searchForm) }}>
+                {{ form_widget(searchForm) }}
+                <!-- <button type="submit">Search</button> -->
+            </form>
+
+            {% if party.tracks %}
+                <ul id="track-queue" class="track-listing">
+                    {% for track in party.tracks %}
+                    <li data-track-key="{{ track.key }}">
+                        <h2>{{ track.name }}</h2>
+                        <p>{{ track.artist }} <em>{{ track.album }}</em></p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="error">No tracks in queue</p>
+            {% endif %}
+        </section>
+    </div>
+{% endblock content %}

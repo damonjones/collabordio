@@ -1,12 +1,16 @@
-{%  extends '::base.html.twig' %}
+{%  extends 'HTAppBundle:Layouts:base.html.twig' %}
 
-{% block body %}
-<h1>Create a new party</h1>
+{% block title %}Be a Party Animal{% endblock title %}
 
-<form action="{{ path('party_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button type="submit">Create</button>
-    </p>
-</form>
-{% endblock %}
+{% block content %}
+<div class="content-wrapper">
+    <h1>Create a new party</h1>
+
+    <form action="{{ path('party_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button type="submit">Create</button>
+        </p>
+    </form>
+</div>
+{% endblock content %}

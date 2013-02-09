@@ -1,15 +1,19 @@
-{%  extends '::base.html.twig' %}
+{% extends 'HTAppBundle:Layouts:base.html.twig' %}
 
-{%  block body %}
-{% if tracks %}
-<ul>
-{% for track in tracks %}
-    <li><a href="{{ path('add', { 'key': track.key, 'name': track.name|url_encode(), 'artist': track.artist|url_encode(), 'album': track.album|url_encode()}) }}">
-        {{ track.key }}: {{ track.name }} ({{ track.artist }} : {{ track.album }})</a>
-    </li>
-{% endfor %}
-</ul>
-{% else %}
-    No matching tracks found. Please try again.
-{%  endif %}
+{% block title %}Grab a Song{% endblock title %}
+
+{% block content %}
+    <div class="content-wrapper">
+        {% if tracks %}
+            <ul class="track-listing">
+                {% for track in tracks %}
+                <li>
+                    <a href="{{ path('add', { 'key': track.key, 'name': track.name|url_encode(), 'artist': track.artist|url_encode(), 'album': track.album|url_encode()}) }}">{{ track.key }}: {{ track.name }} ({{ track.artist }} : {{ track.album }})</a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No matching tracks found. Please try again.</p>
+        {%  endif %}
+    </div>
 {%  endblock %}

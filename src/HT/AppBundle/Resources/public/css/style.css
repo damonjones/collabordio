@@ -323,6 +323,8 @@ h1, h2, h3, h4, h5, h6 {
       color: #ccc; }
 
 .player {
+  display: inline-block;
+  vertical-align: top;
   opacity: 0;
   margin-bottom: 20px;
   margin-bottom: 2rem;
@@ -378,3 +380,20 @@ dl:after {
   width: 29.7rem;
   display: inline-block;
   border: 1px solid black; }
+
+.queue-display {
+  width: 400px;
+  width: 40rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 100px; }
+
+.track-listing {
+  padding-left: 0;
+  list-style-type: none; }
+  .track-listing li {
+    border: 1px solid #cccccc;
+    padding: 0px 10px; }
+    .track-listing li em {
+      color: #ccc;
+      padding-left: 4px; }
